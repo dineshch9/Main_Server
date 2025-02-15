@@ -1,15 +1,15 @@
 const fs =require('fs');
 const morgan =require('morgan');
 const path =require('path');
-const path =require('path');
+
 const { fileURLToPath } = require('url');
 
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname1 = path.dirname(__filename);
-// const __dirname = path.dirname(__dirname1);
-const __dirname = process.cwd();
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname1 = path.dirname(__filename);
+// // const __dirname = path.dirname(__dirname1);
+const __dirname1 = process.cwd();
 
 
 morgan.token('remote-addr', (req) => {
@@ -19,14 +19,15 @@ morgan.token('remote-addr', (req) => {
 
 
 // Ensure logs directory exists
-const logDir = path.join(__dirname, 'logs');
+
+const logDir = path.join(__dirname1, 'logs');
 fs.existsSync(logDir) || fs.mkdirSync(logDir);
 
 // Create a write stream (in append mode)
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs', 'access.log'), { flags: 'a' });
+const accessLogStream = fs.createWriteStream(path.join(__dirname1, 'logs', 'access.log'), { flags: 'a' });
 
 // Create and export the logger middleware
-export const loggerMiddleware = morgan(':remote-addr | :method | :url | :status | :res[content-length] | :response-time ms', {
+const loggerMiddleware = morgan(':remote-addr | :method | :url | :status | :res[content-length] | :response-time ms', {
   stream: {
     write: (message) => {
       accessLogStream.write(message);
@@ -34,3 +35,6 @@ export const loggerMiddleware = morgan(':remote-addr | :method | :url | :status 
     }
   }
 });
+
+
+module.exports=loggerMiddleware;
