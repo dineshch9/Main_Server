@@ -41,6 +41,6 @@ logSchema.statics.createLog = async function(logData) {
 
 
 
-const Log = mongoose.model('Log', logSchema,'logs');
+const Log = mongoose.model('Log', logSchema,'logsf');
 
 module.exports = Log;

@@ -8,15 +8,12 @@ const homerouter = require('./routes/homeroute.js');
 const app = express();
 const port = process.env.PORT || 4320;
 
-console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+
 // dotenv.config();
 // const url=process.env.dburl;
-console.log("1111111111111111111111111111111111111111111111111111111111111111111111");
 
-async function sd(){
-  console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
-}
-sd();
+
+
 async function connectDB(){
 
    try {
@@ -26,13 +23,13 @@ async function connectDB(){
         console.log("connectedsu");
       } catch (error) {
           console.log(error);
-        console.log("not connected111");
+        console.log("not connected111",error);
         
       }
 
 
 
-console.log("byeeeeeeeeeeeeeeeeeeeeeeeeeee222222222");
+
 
   
 } 
