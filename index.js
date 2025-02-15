@@ -20,10 +20,10 @@ async function connectDB(){
           // console.log(url);
         await mongoose.connect("mongodb+srv://dinesh:dinesh@dinesh.2k4lr.mongodb.net/cars1?retryWrites=true&w=majority&appName=Dinesh"
         );
-        console.log("connected");
+        console.log("connectedsu");
       } catch (error) {
-          console.log(error.message);
-        console.log("not connected");
+          console.log(error);
+        console.log("not connected111");
         
       }
 
