@@ -8,10 +8,10 @@ const url=process.env.mongobdurl;
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(url, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+   
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log("done");
   } catch (error) {
     console.error(`Error: ${error.message}`);
     process.exit(1);
