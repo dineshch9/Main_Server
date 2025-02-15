@@ -10,21 +10,8 @@ const logSchema = new mongoose.Schema({
   
   },
   url: {
-    type: String,
-    
-  },
-  status: {
-    type: Number,
-  
-  },
-  response: {
-    type: mongoose.Schema.Types.Mixed,
-    
-  },
-  responseTime: {
-    type: Number,
-    
-  },
+    type: String,},
+
   timestamp: {
     type: Date,
     default: Date.now
