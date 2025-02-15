@@ -1,6 +1,6 @@
 const express =require('express');
 const dotenv=require('dotenv');
-const loggerMiddleware=require('./middlewares/loggerMiddleware.js');
+// const loggerMiddleware=require('./middlewares/loggerMiddleware.js');
 const binrouter=require('./routes/binroute.js');
 const homerouter=require('./routes/homeroute.js');
 
