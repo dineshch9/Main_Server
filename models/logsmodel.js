@@ -7,15 +7,15 @@ const logSchema = new mongoose.Schema({
   },
   method: {
     type: String,
-    required: true
+  
   },
   url: {
     type: String,
-    required: true
+    
   },
   status: {
     type: Number,
-    required: true
+  
   },
   response: {
     type: mongoose.Schema.Types.Mixed,
