@@ -13,6 +13,7 @@ async function connectDB(url){
       );
       console.log("connected");
     } catch (error) {
+        console.log(error.message);
       console.log("not connected");
       
     }
