@@ -6,7 +6,8 @@ const binrouter = require('./routes/binroute.js');
 const homerouter = require('./routes/homeroute.js');
 console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 dotenv.config();
-connectDB();
+const url=process.env.dburl;
+connectDB(url);
 
 const app = express();
 const port = process.env.PORT || 4320;
