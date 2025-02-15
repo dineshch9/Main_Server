@@ -5,11 +5,11 @@ const connectDB =require('./config/db.config.js');
 const binrouter = require('./routes/binroute.js');
 const homerouter = require('./routes/homeroute.js');
 console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-dotenv.config();
+// dotenv.config();
 // const url=process.env.dburl;
-console.log(1);
+console.log("1111111111111111111111111111111111111111111111111111111111111111111111");
 connectDB();
-console.log(1);
+console.log("11111111111111111111111111111111111");
 
 const app = express();
 const port = process.env.PORT || 4320;
