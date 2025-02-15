@@ -34,6 +34,15 @@ const logSchema = new mongoose.Schema({
 // Static method to create a new log entry
 logSchema.statics.createLog = async function(logData) {
   try {
+
+    if (mongoose.connection.readyState === 1) {
+      console.log('Mongoose is connected');
+    } else {
+      console.log('Mongoose is not connected');
+    }
+
+
+
     const newLog = new this(logData);
     return await newLog.save();
   } catch (error) {
