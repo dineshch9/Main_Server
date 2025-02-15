@@ -13,7 +13,7 @@ const __dirname1 = process.cwd();
 
 
 morgan.token('remote-addr', (req) => {
-  return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  return req.headers['x-forwarded-for'] ;
 });
 
 
