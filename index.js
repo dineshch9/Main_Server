@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const [ saveLogToDatabase ] = require('./controllers/saveLogToDatabase.js');
+const saveLogToDatabase = require('./controllers/saveLogToDatabase.js');
 // const connectDB =require('./config/db.config.js');
 const binrouter = require('./routes/binroute.js');
 const homerouter = require('./routes/homeroute.js');
@@ -16,15 +16,7 @@ console.log("1111111111111111111111111111111111111111111111111111111111111111111
 
 async function connectDB(){
 console.log("byeeeeeeeeeeeeeeeeeeeeeeeeeee");
-  try {
-    // console.log(url);
-    await mongoose.connect("mongodb+srv://dinesh:dinesh@dinesh.2k4lr.mongodb.net/bin?retryWrites=true&w=majority&appName=Dinesh");
-    console.log("connected");
-  } catch (error) {
-    console.log(error.message);
-    console.log("not connected");
-    
-  }
+
   
 } 
 

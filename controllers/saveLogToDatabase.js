@@ -14,6 +14,7 @@ const saveLogToDatabase = async (req, res) => {
     };
   
     try {
+      console.log(logEntry);
       await Log.createLog(logEntry);
       console.log('Log entry saved to database');
     } catch (error) {
@@ -24,4 +25,4 @@ const saveLogToDatabase = async (req, res) => {
   };
 
 
-  module.exports = [ saveLogToDatabase];
+  module.exports = saveLogToDatabase;
