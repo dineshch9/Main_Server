@@ -3,7 +3,7 @@ const dotenv=require('dotenv');
 dotenv.config();
 
 const url=process.env.mongobdurl;
-
+console.log("bye");
 
 const connectDB = async () => {
   try {
