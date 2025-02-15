@@ -5,6 +5,9 @@ const [ saveLogToDatabase ] = require('./controllers/saveLogToDatabase.js');
 // const connectDB =require('./config/db.config.js');
 const binrouter = require('./routes/binroute.js');
 const homerouter = require('./routes/homeroute.js');
+const app = express();
+const port = process.env.PORT || 4320;
+
 console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 // dotenv.config();
 // const url=process.env.dburl;
@@ -34,12 +37,11 @@ connectDB();
 
 console.log("11111111111111111111111111111111111");
 
-const app = express();
-const port = process.env.PORT || 4320;
 
 // Logging middleware using 'finish' event
 app.use((req, res, next) => {
   res.on('finish', () => {
+    connectDB();
     saveLogToDatabase(req, res);
   });
   next();
