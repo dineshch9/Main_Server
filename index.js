@@ -4,7 +4,7 @@ const [ saveLogToDatabase ] = require('./controllers/saveLogToDatabase.js');
 const connectDB =require('./config/db.config.js');
 const binrouter = require('./routes/binroute.js');
 const homerouter = require('./routes/homeroute.js');
-
+console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 dotenv.config();
 connectDB();
 
