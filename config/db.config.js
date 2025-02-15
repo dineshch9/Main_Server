@@ -6,7 +6,8 @@ const url=process.env.mongobdurl;
 console.log("bye");
 
 const connectDB = async () => {
-  try {
+    try {
+        console.log("bye1");
     const conn = await mongoose.connect(url, {
    
     });
