@@ -13,7 +13,10 @@ console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 // const url=process.env.dburl;
 console.log("1111111111111111111111111111111111111111111111111111111111111111111111");
 
-
+async function sd(){
+  console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+}
+sd();
 async function connectDB(){
 
    try {
