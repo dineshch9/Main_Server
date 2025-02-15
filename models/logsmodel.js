@@ -1,0 +1,50 @@
+const mongoose = require('mongoose');
+
+const logSchema = new mongoose.Schema({
+  ipAddress: {
+    type: String,
+    
+  },
+  method: {
+    type: String,
+    required: true
+  },
+  url: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: Number,
+    required: true
+  },
+  response: {
+    type: mongoose.Schema.Types.Mixed,
+    
+  },
+  responseTime: {
+    type: Number,
+    
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+// Static method to create a new log entry
+logSchema.statics.createLog = async function(logData) {
+  try {
+    const newLog = new this(logData);
+    return await newLog.save();
+  } catch (error) {
+    throw new Error(`Error creating log: ${error.message}`);
+  }
+};
+
+
+
+
+
+const Log = mongoose.model('Log', logSchema,'logs');
+
+module.exports = Log;

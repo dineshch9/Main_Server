@@ -1,22 +1,26 @@
-const express =require('express');
-const dotenv=require('dotenv');
-// const loggerMiddleware=require('./middlewares/loggerMiddleware.js');
-const binrouter=require('./routes/binroute.js');
-const homerouter=require('./routes/homeroute.js');
-
+const express = require('express');
+const dotenv = require('dotenv');
+const [ saveLogToDatabase ] = require('./controllers/saveLogToDatabase.js');
+const connectDB =require('./config/db.config.js');
+const binrouter = require('./routes/binroute.js');
+const homerouter = require('./routes/homeroute.js');
 
 dotenv.config();
+connectDB();
 
 const app = express();
-const port = process.env.PORT||4320;
+const port = process.env.PORT || 4320;
 
+// Logging middleware using 'finish' event
+app.use((req, res, next) => {
+  res.on('finish', () => {
+    saveLogToDatabase(req, res);
+  });
+  next();
+});
 
-// Use the logger middleware
-// app.use(loggerMiddleware);
-
-
-app.use('/bin',binrouter);
-app.use('/',homerouter);
+app.use('/bin', binrouter);
+app.use('/', homerouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -27,6 +31,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
 
 module.exports = app;
