@@ -1,9 +1,7 @@
-// index.js
-import express from 'express';
-import { loggerMiddleware } from './middlewares/loggerMiddleware.js';
-import dotenv from 'dotenv';
-import binrouter from './routes/binroute.js';
-import homerouter from './routes/homeroute.js';
+const express =require('express');
+const dotenv=require('dotenv');
+const binrouter=require('./routes/binroute.js');
+const homerouter=require('./routes/homeroute.js');
 
 
 dotenv.config();
@@ -30,3 +28,4 @@ app.listen(port, () => {
 });
 
 
+module.exports = app;

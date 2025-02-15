@@ -1,9 +1,10 @@
-// loggerMiddleware.js
-import fs from 'fs';
-import morgan from 'morgan';
-import path from 'path';
-import { dirname } from 'path/posix';
-import { fileURLToPath } from 'url';
+const fs =require('fs');
+const morgan =require('morgan');
+const path =require('path');
+const path =require('path');
+const { fileURLToPath } = require('url');
+
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname1 = path.dirname(__filename);
