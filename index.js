@@ -11,7 +11,7 @@ const port = process.env.PORT||4320;
 
 
 // Use the logger middleware
-// app.use(loggerMiddleware);
+app.use(loggerMiddleware);
 
 
 app.use('/bin',binrouter);
