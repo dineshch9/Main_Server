@@ -1,6 +1,6 @@
 const express =require('express');
 const dotenv=require('dotenv');
-const loggerMiddleware=require('./middlewares/loggerMiddleware.js');
+// const loggerMiddleware=require('./middlewares/loggerMiddleware.js');
 const binrouter=require('./routes/binroute.js');
 const homerouter=require('./routes/homeroute.js');
 
@@ -12,7 +12,7 @@ const port = process.env.PORT||4320;
 
 
 // Use the logger middleware
-app.use(loggerMiddleware);
+// app.use(loggerMiddleware);
 
 
 app.use('/bin',binrouter);
