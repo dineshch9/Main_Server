@@ -26,8 +26,10 @@ async function connect(DB_URL){
     await mongoose.connect(url);
     console.log("connected");
   } catch (e) {
-    console.log("not connected");
+    console.log("not connected idk");
     console.log(e.message);
+    console.log(e);
+    console.log("not connected idk");
     
   }
   
