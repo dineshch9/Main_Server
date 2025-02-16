@@ -38,17 +38,12 @@ logSchema.statics.createLog = async function(logData) {
       console.log('Mongoose is not connected');
     }
 
-
-
     const newLog = new this(logData);
     return await newLog.save();
   } catch (error) {
     throw new Error(`Error creating log: ${error.message}`);
   }
 };
-
-
-
 
 
 const Log = mongoose.model('Log', logSchema,'logs');
