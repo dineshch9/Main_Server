@@ -1,17 +1,16 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors =require('cors');
 const saveLogToDatabase = require('../controllers/saveLogToDatabase.js');
-// const connectDB =require('./config/db.config.js');
+const connect =require('../config/db.config.js');
 const binrouter = require('../routes/binroute.js');
 const homerouter = require('../routes/homeroute.js');
 const app = express();
 const port = process.env.PORT || 4320;
 dotenv.config();
 const url =  process.env.DB_URL;
-// const DB_URL=mongodb+srv://dinesh:dinesh@dinesh.2k4lr.mongodb.net/cars1?retryWrites=true&w=majority&appName=Dinesh;
-// const url=process.env.dburl;
+connect(url);
+
 
 const corsOptions = {
   origin: '*', 
@@ -21,30 +20,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-async function connect(DB_URL){
-  try {
-    await mongoose.connect(url);
-    console.log("connected");
-  } catch (e) {
-    console.log("not connected idk");
-    console.log(e.message);
-    console.log(e);
-    console.log("not connected idk");
-    
-  }
-  
-} 
-console.log(url);
-connect(url);
-
-
-
-
-
-
-
-
-// Logging middleware using 'finish' event
 app.use((req, res, next) => {
   res.on('finish', () => {
    

@@ -10,7 +10,17 @@ const logSchema = new mongoose.Schema({
   
   },
   url: {
-    type: String,},
+    type: String,
+    
+  },
+  status: {
+    type: Number,
+  
+  },
+  response: {
+    type: mongoose.Schema.Types.Mixed,
+    
+  },
 
   timestamp: {
     type: Date,
@@ -41,6 +51,6 @@ logSchema.statics.createLog = async function(logData) {
 
 
 
-const Log = mongoose.model('Log', logSchema,'logsf');
+const Log = mongoose.model('Log', logSchema,'logs');
 
 module.exports = Log;

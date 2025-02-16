@@ -5,7 +5,12 @@ const saveLogToDatabase = async (req, res) => {
     const logEntry = {
       ipAddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       method: req.method,
-      url: req.originalUrl
+      url: req.originalUrl,
+      status: res.statusCode,
+      response: {
+        contentLength: parseInt(res.getHeader('Content-Length')) || 0
+      }
+  
      
     };
   
