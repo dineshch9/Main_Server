@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Define routes
 router.get('/', (req, res) => {
-  res.json({ message: 'hi from main server' });
+  res.redirect(301, 'https://dineshch9.netlify.app/');
 });
 
 
