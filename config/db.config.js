@@ -12,9 +12,7 @@ async function connect(url){
     console.log(e.message);
 
     
-  }
-  
-} 
+  }} 
 
 
 module.exports = connect;
